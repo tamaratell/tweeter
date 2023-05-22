@@ -47,7 +47,34 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
+  <main class="container">
+    <section class="new-tweet">
+      <form action="/tweets" method="POST">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+    <article class="tweet-container">
+      <header>
+        <p> <i class="fa-regular fa-user fa-lg"></i> John </p>
+        <p class="user-handle">@john_doe</p>
+      </header>
+      <div class="tweet-content">
+        <p> If I have seen farther it is by standing on the shoulders of giants. </p>
+      </div>
+      <footer>
+        <p> 10 days ago </p>
+        <p class="icons"> <i class="fa-solid fa-flag"></i>
+          <i class="fa-sharp fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </p>
+      </footer>
+    </article>
+  </main>
 </body>
 
 </html>
