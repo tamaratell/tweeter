@@ -71,20 +71,31 @@ form div {
   background-color: #f4f1ec;
   color: #545149;
   height: 20%;
+  margin: 5px 5px;
   font-size: 2rem;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-content: center;
 }
 
-.tweet-container .user-handle {
+.tweet-user-icon {
+  height: 50px;
+  width: auto;
+  padding-right: 0.2em;
+}
+
+.tweet-container header div {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-container header .user-handle {
   color: #a5aab8;
 }
 
 .tweet-content {
   padding: 10px;
   font-size: 2rem;
+  margin-top: 0;
 }
 
 .tweet-container footer {
