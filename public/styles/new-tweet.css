@@ -118,3 +118,7 @@ form div {
 .icons .fa-heart:hover {
   color: #EBC05C;
 }
+
+.count-exceeded {
+  color: #ee492c;
+}
