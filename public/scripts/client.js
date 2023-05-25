@@ -7,31 +7,31 @@
 $(() => {
   //CREATE TWEET ELEMENT TO GO IN TWEETS ON PAGE: 
   // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
 
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -68,7 +68,39 @@ $(() => {
     return $tweet;
   };
 
-  renderTweets(data);
+  const loadTweets = () => {
+    $.get('/tweets', function(response) {
+      renderTweets(response);
+    }).fail(function(xhr, status, error) {
+      console.log('GET request failed');
+      console.log(error);
+    });
+  };
+
+  $('#new-tweet').submit(function(event) {
+    event.preventDefault();
+    const tweetData = $(this).serialize();
+    console.log(tweetData);
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: tweetData,
+      success: function(response) {
+        console.log("Success");
+        loadTweets();
+      },
+      error: function(xhr, status, error) {
+        // Handle the error response
+        console.log('POST request failed');
+        console.log(error);
+      }
+    });
+  });
+
+
+  //renderTweets(data);
+
 
 });
 
