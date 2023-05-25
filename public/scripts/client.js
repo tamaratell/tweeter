@@ -99,7 +99,7 @@ $(() => {
   });
 
 
-  //renderTweets(data);
+  renderTweets(data);
 
 
 });
