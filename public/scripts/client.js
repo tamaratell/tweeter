@@ -12,7 +12,7 @@ $(() => {
       // calls createTweetElement for each tweet
       const formattedTweet = createTweetElement(tweets[tweet]);
       // takes return value and appends it to the tweets container
-      $('.tweet-container').append(formattedTweet);
+      $('.tweet-container').prepend(formattedTweet);
     }
     return;
   };
@@ -52,7 +52,8 @@ $(() => {
 
   $('#new-tweet').submit(function(event) {
     event.preventDefault();
-    const tweetData = $(this).find('#tweet-text').val().trim();;
+    const $form = $(this);
+    const tweetData = $form.find('#tweet-text').val().trim();
 
     if (tweetData.length > 140 || tweetData.length === 0) {
       alert("Tweet must be between 1 and 140 characters");
@@ -62,7 +63,7 @@ $(() => {
     $.ajax({
       url: '/tweets',
       method: 'POST',
-      data: tweetData,
+      data: $form.serialize(),
       success: function(response) {
         console.log("Success");
         loadTweets();
