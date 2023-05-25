@@ -52,10 +52,10 @@ $(() => {
 
   $('#new-tweet').submit(function(event) {
     event.preventDefault();
-    const tweetData = $(this).serialize();
+    const tweetData = $(this).find('#tweet-text').val().trim();;
 
-    if (tweetData.length > 140 || tweetData === null) {
-      alert("Tweet must be between 0 and 140 characters");
+    if (tweetData.length > 140 || tweetData.length === 0) {
+      alert("Tweet must be between 1 and 140 characters");
       return;
     }
 
