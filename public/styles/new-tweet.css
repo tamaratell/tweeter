@@ -50,7 +50,10 @@ form div {
 }
 
 .tweet-container {
-  margin-top: 20px;
+  margin-top: 1em;
+}
+
+.tweet {
   background-color: #f4f1ec;
   width: 100%;
   display: flex;
@@ -61,13 +64,13 @@ form div {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.tweet-container:hover {
+.tweet:hover {
   box-shadow: 10px 5px 5px rgba(194, 196, 206, 0.5);
   box-shadow: 0px 8px 15px -5px #333333;
   box-shadow: 6px 6px 2px 0px #a5aab8;
 }
 
-.tweet-container header {
+.tweet header {
   background-color: #f4f1ec;
   color: #545149;
   height: 20%;
@@ -83,12 +86,12 @@ form div {
   padding-right: 0.2em;
 }
 
-.tweet-container header div {
+.tweet header div {
   display: flex;
   align-items: center;
 }
 
-.tweet-container header .user-handle {
+.tweet header .user-handle {
   color: #a5aab8;
 }
 
@@ -98,7 +101,7 @@ form div {
   margin-top: 0;
 }
 
-.tweet-container footer {
+.tweet footer {
   height: 10%;
   border-top: 3px solid rgb(85, 80, 80);
   display: flex;
