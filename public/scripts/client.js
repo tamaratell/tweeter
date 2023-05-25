@@ -53,7 +53,11 @@ $(() => {
   $('#new-tweet').submit(function(event) {
     event.preventDefault();
     const tweetData = $(this).serialize();
-    console.log(tweetData);
+
+    if (tweetData.length > 140 || tweetData === null) {
+      alert("Tweet must be between 0 and 140 characters");
+      return;
+    }
 
     $.ajax({
       url: '/tweets',
