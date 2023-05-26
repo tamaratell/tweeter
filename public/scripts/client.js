@@ -19,20 +19,26 @@ $(() => {
   };
 
   const createTweetElement = function(tweet) {
+    // Sanitize user-generated content using DOMPurify
+    const sanitizedUserName = DOMPurify.sanitize(tweet.user.name);
+    const sanitizedHandle = DOMPurify.sanitize(tweet.user.handle);
+    const sanitizedText = DOMPurify.sanitize(tweet.content.text);
+    const sanitizedCreatedAt = DOMPurify.sanitize(timeago.format(tweet.created_at));
+
     let $tweet = `
       <article class="tweet">
         <header>
           <div>
             <img class="tweet-user-icon" src="${tweet.user.avatars}">
-            <p>${tweet.user.name}</p>
+            <p>${sanitizedUserName}</p>
           </div>
-          <p class="user-handle">${tweet.user.handle}</p>
+          <p class="user-handle">${sanitizedHandle}</p>
         </header>
         <div class="tweet-content">
-          <p>${tweet.content.text}</p>
+          <p>${sanitizedText}</p>
         </div>
         <footer>
-          <p>${timeago.format(tweet.created_at)}</p>
+          <p>${sanitizedCreatedAt}</p>
           <p class="icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-sharp fa-solid fa-retweet"></i>
@@ -42,6 +48,7 @@ $(() => {
       </article>`;
     return $tweet;
   };
+
 
 
   const loadTweets = () => {
