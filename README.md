@@ -4,9 +4,9 @@ Tweeter is a simple, single-page Twitter clone created to practice my front-end 
 
 ## Screenshots
 
-!["Screenshot of Tweeter Mobile"]()
-!["Screenshot of Tweeter Desktop]()
-!["Character counter and error popup in action"]()
+!["Screenshot of Tweeter Mobile"](https://github.com/tamaratell/tweeter/blob/master/public/images/tweeter_mobile.png?raw=true)
+!["Screenshot of Tweeter Desktop](https://github.com/tamaratell/tweeter/blob/master/public/images/tweeter_desktop_view_char.png?raw=true)
+!["Character counter in action"](https://github.com/tamaratell/tweeter/blob/master/public/images/tweeter_mobile_char.png?raw=true)
 
 
 ## Getting Started
