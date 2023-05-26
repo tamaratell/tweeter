@@ -75,6 +75,7 @@ h2 {
     display: flex;
     flex-direction: column;
     margin-top: 12vh;
+    margin-left: 5em;
   }
 
   section.tweet-container {
@@ -84,5 +85,15 @@ h2 {
 
   article.tweet {
     height: 50%;
+    padding-bottom: 2em;
+  }
+
+  article.tweet header {
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  article.tweet footer {
+    font-size: 1rem;
   }
 }
