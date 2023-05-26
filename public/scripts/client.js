@@ -5,6 +5,7 @@
  */
 
 $(() => {
+  let tweetsLoaded = false;
 
   const renderTweets = function(tweets) {
     // loops through tweets
@@ -19,27 +20,29 @@ $(() => {
 
   const createTweetElement = function(tweet) {
     let $tweet = `
-  <article class="tweet">
-      <header>
-        <div>
-          <img class="tweet-user-icon" src="${tweet.user.avatars}">
-          <p>${tweet.user.name}</p>
+      <article class="tweet">
+        <header>
+          <div>
+            <img class="tweet-user-icon" src="${tweet.user.avatars}">
+            <p>${tweet.user.name}</p>
+          </div>
+          <p class="user-handle">${tweet.user.handle}</p>
+        </header>
+        <div class="tweet-content">
+          <p>${tweet.content.text}</p>
         </div>
-        <p class="user-handle">${tweet.user.handle}</p>
-      </header>
-      <div class="tweet-content">
-        <p> ${tweet.content.text} </p>
-      </div>
-      <footer>
-        <p> ${timeago.format(tweet.created_at)} </p>
-        <p class="icons"> <i class="fa-solid fa-flag"></i>
-          <i class="fa-sharp fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </p>
-      </footer>
-    </article>`;
+        <footer>
+          <p>${timeago.format(tweet.created_at)}</p>
+          <p class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-sharp fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </p>
+        </footer>
+      </article>`;
     return $tweet;
   };
+
 
   const loadTweets = () => {
     $.get('/tweets', function(response) {
@@ -74,6 +77,10 @@ $(() => {
         console.log(error);
       }
     });
+
+    $('#tweet-text').val("");
+    $('.counter').val(140);
+
   });
 });
 

@@ -28,13 +28,22 @@ textarea {
 }
 
 button[type="submit"] {
-  background-color: #4056A1;
+  background-color: rgb(64, 86, 161);
   color: white;
   font-family: 'Bungee', cursive;
   padding: 5px 10px;
-  border: none;
+  border: 4px #4056A1 solid;
   border-radius: 3px;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 0 10px rgba(94, 115, 186, 0.866);
+}
+
+button[type="submit"]:active {
+  background-color: #062756;
 }
 
 form div {
@@ -66,8 +75,6 @@ form div {
 }
 
 .tweet:hover {
-  box-shadow: 10px 5px 5px rgba(194, 196, 206, 0.5);
-  box-shadow: 0px 8px 15px -5px #333333;
   box-shadow: 6px 6px 2px 0px #a5aab8;
 }
 
