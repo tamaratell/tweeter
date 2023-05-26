@@ -42,57 +42,60 @@
     </div>
   </nav>
 
-  <!-- Header with Icon  -->
-  <header id="page-header">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <h2> <span class="first-word-emphasis">Your</span> Name</h2>
-  </header>
+  <div class="body-main">
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <!-- <div class="modal">
-      <div class="modal-content">
-        <button class="close-button"> X </button>
-        <p><i class="fa-solid fa-triangle-exclamation"></i> Woah there! Your tweet is on the verge of starting a
-          novel. Keep it to 140 characters or less. </p>
+    <!-- Header with Icon  -->
+    <header id="page-header">
+      <div>
+        <img src="/images/profile-hex.png">
       </div>
-    </div> -->
+      <h2> <span class="first-word-emphasis">Your</span> Name</h2>
+    </header>
 
-    <section class="new-tweet">
-      <form id="new-tweet" action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
-    <section class="tweet-container">
-      <!-- <article class="tweet">
-        <header>
-          <div>
-            <img class="tweet-user-icon" src="https://i.imgur.com/73hZDYK.png" alt="">
-            <p>User</p>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <!-- <div class="modal">
+        <div class="modal-content">
+          <button class="close-button"> X </button>
+          <p><i class="fa-solid fa-triangle-exclamation"></i> Woah there! Your tweet is on the verge of starting a
+            novel. Keep it to 140 characters or less. </p>
           </div>
-          <p class="user-handle">@user_handle</p>
-        </header>
-        <div class="tweet-content">
-          <p> If I have seen farther it is by standing on the shoulders of giants. </p>
-        </div>
-        <footer>
-          <p> 10 days ago </p>
-          <p class="icons"> <i class="fa-solid fa-flag"></i>
-            <i class="fa-sharp fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </p>
-        </footer>
-      </article> -->
-    </section>
-  </main>
+        </div> -->
+
+      <section class="new-tweet">
+        <form id="new-tweet" action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <section class="tweet-container">
+        <!-- <article class="tweet">
+            <header>
+              <div>
+                <img class="tweet-user-icon" src="https://i.imgur.com/73hZDYK.png" alt="">
+                <p>User</p>
+              </div>
+              <p class="user-handle">@user_handle</p>
+            </header>
+            <div class="tweet-content">
+              <p> If I have seen farther it is by standing on the shoulders of giants. </p>
+            </div>
+            <footer>
+              <p> 10 days ago </p>
+              <p class="icons"> <i class="fa-solid fa-flag"></i>
+                <i class="fa-sharp fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </p>
+            </footer>
+          </article> -->
+      </section>
+    </main>
+  </div>
 
 </body>
 
