@@ -39,10 +39,8 @@
 
 label {
   display: block;
-  margin-bottom: 10px;
-  border-bottom: 3px solid rgb(85, 80, 80);
   border-radius: 3px;
-  line-height: 2.5;
+  line-height: 1.5;
   font-size: 1.5rem;
 }
 
@@ -53,6 +51,7 @@ textarea {
   padding: 10px;
   margin-bottom: 10px;
   border: 0;
+  border-bottom: 5px solid rgb(85, 80, 80);
   background-color: #f4f1ec;
   font-weight: 700;
   color: rgb(85, 80, 80);
