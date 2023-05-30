@@ -13,17 +13,18 @@ $(() => {
     const $form = $(this);
     const tweetData = $form.find('#tweet-text').val().trim();
 
-    const $existingModal = $('main').find('.modal');
-    if ($existingModal.length) {
-      $existingModal.remove();
-      return;
-    }
 
     if (!validateTweet(tweetData)) {
       const $modal = showModal(tweetData.length);
       $modal.on('click', '.close-button', () => {
         $modal.slideUp();
       });
+      return;
+    }
+
+    const $existingModal = $('main').find('.modal');
+    if ($existingModal.length) {
+      $existingModal.remove();
       return;
     }
 
